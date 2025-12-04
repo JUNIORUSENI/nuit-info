@@ -7,6 +7,8 @@ import { Choice, RoleType, Scenario } from '../types/game';
 import ResultScreen from './ResultScreen';
 import { useGame } from '../contexts/GameContext';
 import { roles } from '../data/roles';
+import ScenarioCard from './ScenarioCard';
+import Avatar from './Avatar';
 
 interface GamePageProps {
     roleId: RoleType;
@@ -16,8 +18,6 @@ export default function GamePage({ roleId }: GamePageProps) {
     const { gameState, selectRole, makeChoice, resetGame } = useGame();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isGameOver, setIsGameOver] = useState(false);
-    const [showFeedback, setShowFeedback] = useState(false);
-    const [lastChoice, setLastChoice] = useState<Choice | null>(null);
 
     const scenarios = getScenariosForRole(roleId);
     const currentScenario: Scenario | null = scenarios[currentIndex] || null;
@@ -27,38 +27,22 @@ export default function GamePage({ roleId }: GamePageProps) {
         selectRole(roleId);
     }, [roleId, selectRole]);
 
-    const handleChoiceClick = (choice: Choice) => {
-        console.log('🎯 CLIC sur:', choice.text);
-
-        // Éviter double clic
-        if (showFeedback) return;
-
-        // Mettre à jour le score immédiatement
+    const handleChoice = (choice: Choice) => {
+        // Mettre à jour le score
         makeChoice(choice);
 
-        // Afficher le feedback
-        setLastChoice(choice);
-        setShowFeedback(true);
-
-        // Passer à la suite après 2s
-        setTimeout(() => {
-            setShowFeedback(false);
-            setLastChoice(null);
-
-            if (currentIndex + 1 >= scenarios.length) {
-                setIsGameOver(true);
-            } else {
-                setCurrentIndex(prev => prev + 1);
-            }
-        }, 2000);
+        // Passer à la question suivante
+        if (currentIndex + 1 >= scenarios.length) {
+            setIsGameOver(true);
+        } else {
+            setCurrentIndex(prev => prev + 1);
+        }
     };
 
     const handleRestart = () => {
         resetGame();
         setCurrentIndex(0);
         setIsGameOver(false);
-        setShowFeedback(false);
-        setLastChoice(null);
     };
 
     if (isGameOver) {
@@ -66,250 +50,92 @@ export default function GamePage({ roleId }: GamePageProps) {
     }
 
     return (
-        <div style={{ minHeight: '100vh', backgroundColor: '#0d0d0d', padding: '20px' }}>
-            {/* Header simple */}
-            <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '30px',
-                padding: '15px 20px',
-                backgroundColor: '#1a1a1a',
-                borderRadius: '20px',
-                border: '1px solid #2a2a2a'
-            }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: '50%',
-                        backgroundColor: '#00ff88',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontWeight: 'bold',
-                        color: 'black'
-                    }}>N</div>
-                    <span style={{ color: '#00ff88', fontWeight: 'bold', fontSize: '18px' }}>
-                        Opération N.I.R.D
-                    </span>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                    {/* Scores */}
-                    <div style={{ display: 'flex', gap: '15px' }}>
-                        <span style={{ color: gameState.score.money >= 0 ? '#00ff88' : '#ff4444' }}>
-                            💰 {gameState.score.money}€
-                        </span>
-                        <span style={{ color: gameState.score.co2 >= 0 ? '#00ff88' : '#ff4444' }}>
-                            🌍 {gameState.score.co2}kg
-                        </span>
-                        <span style={{ color: '#00ff88' }}>
-                            ⚡ {gameState.score.nird} pts
+        <div className="min-h-screen bg-[#0d0d0d] p-4 md:p-8 font-sans text-white">
+            <div className="max-w-7xl mx-auto">
+                {/* Header */}
+                <header className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 bg-[#1a1a1a] p-6 rounded-3xl border border-[#2a2a2a]">
+                    <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-[#00ff88] flex items-center justify-center text-black font-bold text-xl shadow-[0_0_15px_rgba(0,255,136,0.3)]">
+                            N
+                        </div>
+                        <span className="text-[#00ff88] font-bold text-xl tracking-wide">
+                            Opération N.I.R.D
                         </span>
                     </div>
 
-                    {/* Progression */}
-                    <span style={{ color: 'white' }}>
-                        Question {currentIndex + 1}/{scenarios.length}
-                    </span>
-                </div>
-            </div>
+                    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+                        {/* Scores */}
+                        <div className="flex gap-6 bg-[#0d0d0d] px-6 py-3 rounded-2xl border border-[#2a2a2a]">
+                            <div className={`flex items-center gap-2 font-mono font-bold ${gameState.score.money >= 0 ? 'text-[#00ff88]' : 'text-red-500'}`}>
+                                <span>💰</span>
+                                <span>{gameState.score.money}€</span>
+                            </div>
+                            <div className={`flex items-center gap-2 font-mono font-bold ${gameState.score.co2 >= 0 ? 'text-[#00ff88]' : 'text-orange-500'}`}>
+                                <span>🌍</span>
+                                <span>{gameState.score.co2}kg</span>
+                            </div>
+                            <div className="flex items-center gap-2 font-mono font-bold text-[#00ff88]">
+                                <span>⚡</span>
+                                <span>{gameState.score.nird} pts</span>
+                            </div>
+                        </div>
 
-            {/* Retour */}
-            <Link href="/" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                color: '#888',
-                marginBottom: '20px',
-                textDecoration: 'none'
-            }}>
-                ← Changer de Rôle
-            </Link>
+                        {/* Progression */}
+                        <div className="text-gray-400 font-medium bg-[#0d0d0d] px-4 py-3 rounded-2xl border border-[#2a2a2a]">
+                            Question <span className="text-white">{currentIndex + 1}</span>
+                            <span className="text-gray-600 mx-1">/</span>
+                            <span>{scenarios.length}</span>
+                        </div>
+                    </div>
+                </header>
 
-            <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap' }}>
-                {/* Questions - Colonne gauche */}
-                <div style={{ flex: '2', minWidth: '300px' }}>
-                    {currentScenario && (
-                        <div style={{
-                            backgroundColor: '#1a1a1a',
-                            borderRadius: '24px',
-                            border: '1px solid #2a2a2a',
-                            padding: '30px'
-                        }}>
-                            {/* Badge */}
-                            <div style={{
-                                display: 'inline-block',
-                                padding: '8px 16px',
-                                backgroundColor: 'rgba(0,255,136,0.1)',
-                                border: '1px solid rgba(0,255,136,0.3)',
-                                borderRadius: '20px',
-                                color: '#00ff88',
-                                fontSize: '14px',
-                                marginBottom: '20px'
-                            }}>
-                                Question {String(currentIndex + 1).padStart(2, '0')}
+                {/* Retour */}
+                <Link
+                    href="/"
+                    className="inline-flex items-center gap-2 text-gray-500 hover:text-[#00ff88] transition-colors mb-8 group"
+                >
+                    <span className="group-hover:-translate-x-1 transition-transform">←</span>
+                    Changer de Rôle
+                </Link>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    {/* Questions - Colonne gauche */}
+                    <div className="lg:col-span-8">
+                        {currentScenario && (
+                            <ScenarioCard
+                                scenario={currentScenario}
+                                onChoice={handleChoice}
+                                scenarioNumber={currentIndex + 1}
+                            />
+                        )}
+                    </div>
+
+                    {/* Avatar - Colonne droite */}
+                    <div className="lg:col-span-4">
+                        <div className="bg-[#1a1a1a] rounded-3xl border border-[#2a2a2a] p-8 text-center sticky top-8">
+                            <div className="mb-6">
+                                <Avatar />
                             </div>
 
-                            {/* Titre */}
-                            <h2 style={{ color: 'white', fontSize: '28px', marginBottom: '15px' }}>
-                                {currentScenario.title}
-                            </h2>
-
-                            {/* Situation */}
-                            <p style={{ color: '#888', fontSize: '16px', lineHeight: '1.6', marginBottom: '25px' }}>
-                                {currentScenario.situation}
+                            <h3 className="text-2xl font-bold text-white mb-2">
+                                {selectedRole?.title}
+                            </h3>
+                            <p className="text-gray-500 mb-6">
+                                {selectedRole?.subtitle}
                             </p>
 
-                            {/* Choix ou Feedback */}
-                            {!showFeedback ? (
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                    {currentScenario.choices.map((choice, index) => (
-                                        <button
-                                            key={choice.id}
-                                            onClick={() => handleChoiceClick(choice)}
-                                            style={{
-                                                width: '100%',
-                                                textAlign: 'left',
-                                                padding: '18px 20px',
-                                                backgroundColor: '#0d0d0d',
-                                                border: '1px solid #2a2a2a',
-                                                borderRadius: '16px',
-                                                color: '#ccc',
-                                                fontSize: '15px',
-                                                cursor: 'pointer',
-                                                display: 'flex',
-                                                alignItems: 'flex-start',
-                                                gap: '15px',
-                                                transition: 'all 0.2s'
-                                            }}
-                                            onMouseOver={(e) => {
-                                                e.currentTarget.style.borderColor = '#00ff88';
-                                                e.currentTarget.style.color = 'white';
-                                            }}
-                                            onMouseOut={(e) => {
-                                                e.currentTarget.style.borderColor = '#2a2a2a';
-                                                e.currentTarget.style.color = '#ccc';
-                                            }}
-                                        >
-                                            <span style={{
-                                                width: '30px',
-                                                height: '30px',
-                                                borderRadius: '10px',
-                                                backgroundColor: '#1a1a1a',
-                                                border: '1px solid #2a2a2a',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                color: '#00ff88',
-                                                fontWeight: 'bold',
-                                                flexShrink: 0
-                                            }}>
-                                                {String.fromCharCode(65 + index)}
-                                            </span>
-                                            <span style={{ lineHeight: '1.5' }}>{choice.text}</span>
-                                        </button>
-                                    ))}
+                            <div className="space-y-2">
+                                <div className="flex justify-between text-sm">
+                                    <span className="text-gray-400">Niveau d'évolution</span>
+                                    <span className="text-[#00ff88] font-bold">{gameState.avatarLevel}/5</span>
                                 </div>
-                            ) : lastChoice && (
-                                <div style={{
-                                    padding: '25px',
-                                    backgroundColor: lastChoice.isGoodChoice ? 'rgba(0,255,136,0.1)' : 'rgba(255,68,68,0.1)',
-                                    border: `1px solid ${lastChoice.isGoodChoice ? 'rgba(0,255,136,0.3)' : 'rgba(255,68,68,0.3)'}`,
-                                    borderRadius: '16px'
-                                }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
-                                        <span style={{ fontSize: '28px' }}>
-                                            {lastChoice.isGoodChoice ? '✅' : '⚠️'}
-                                        </span>
-                                        <span style={{
-                                            fontWeight: 'bold',
-                                            fontSize: '18px',
-                                            color: lastChoice.isGoodChoice ? '#00ff88' : '#ff4444'
-                                        }}>
-                                            {lastChoice.isGoodChoice ? 'Excellent choix !' : 'Pas idéal...'}
-                                        </span>
-                                    </div>
-                                    <p style={{ color: '#ccc', marginBottom: '15px', lineHeight: '1.5' }}>
-                                        {lastChoice.consequence}
-                                    </p>
-                                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                                        <span style={{
-                                            padding: '8px 16px',
-                                            borderRadius: '20px',
-                                            backgroundColor: lastChoice.impact.money >= 0 ? 'rgba(0,255,136,0.2)' : 'rgba(255,68,68,0.2)',
-                                            color: lastChoice.impact.money >= 0 ? '#00ff88' : '#ff4444',
-                                            fontSize: '14px'
-                                        }}>
-                                            {lastChoice.impact.money >= 0 ? '+' : ''}{lastChoice.impact.money}€
-                                        </span>
-                                        <span style={{
-                                            padding: '8px 16px',
-                                            borderRadius: '20px',
-                                            backgroundColor: lastChoice.impact.co2 >= 0 ? 'rgba(0,255,136,0.2)' : 'rgba(255,150,0,0.2)',
-                                            color: lastChoice.impact.co2 >= 0 ? '#00ff88' : '#ff9600',
-                                            fontSize: '14px'
-                                        }}>
-                                            {lastChoice.impact.co2 >= 0 ? '+' : ''}{lastChoice.impact.co2}kg CO₂
-                                        </span>
-                                        <span style={{
-                                            padding: '8px 16px',
-                                            borderRadius: '20px',
-                                            backgroundColor: 'rgba(0,255,136,0.2)',
-                                            color: '#00ff88',
-                                            fontSize: '14px'
-                                        }}>
-                                            +{lastChoice.impact.nird} NIRD
-                                        </span>
-                                    </div>
+                                <div className="h-3 bg-[#0d0d0d] rounded-full overflow-hidden border border-[#2a2a2a]">
+                                    <div
+                                        className="h-full bg-[#00ff88] transition-all duration-500 ease-out shadow-[0_0_10px_rgba(0,255,136,0.5)]"
+                                        style={{ width: `${(gameState.avatarLevel / 5) * 100}%` }}
+                                    />
                                 </div>
-                            )}
-                        </div>
-                    )}
-                </div>
-
-                {/* Avatar - Colonne droite */}
-                <div style={{ flex: '1', minWidth: '250px' }}>
-                    <div style={{
-                        backgroundColor: '#1a1a1a',
-                        borderRadius: '24px',
-                        border: '1px solid #2a2a2a',
-                        padding: '25px',
-                        textAlign: 'center'
-                    }}>
-                        <div style={{
-                            width: '100px',
-                            height: '100px',
-                            borderRadius: '50%',
-                            backgroundColor: '#0d0d0d',
-                            border: `2px solid ${gameState.avatarLevel >= 3 ? '#00ff88' : '#2a2a2a'}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            margin: '0 auto 15px',
-                            fontSize: '50px'
-                        }}>
-                            {selectedRole?.emoji || '🤖'}
-                        </div>
-                        <p style={{ color: 'white', fontWeight: 'bold', marginBottom: '5px' }}>
-                            {selectedRole?.title}
-                        </p>
-                        <p style={{ color: '#888', fontSize: '14px', marginBottom: '15px' }}>
-                            Niveau {gameState.avatarLevel}/5
-                        </p>
-                        <div style={{
-                            height: '8px',
-                            backgroundColor: '#0d0d0d',
-                            borderRadius: '4px',
-                            overflow: 'hidden'
-                        }}>
-                            <div style={{
-                                width: `${(gameState.avatarLevel / 5) * 100}%`,
-                                height: '100%',
-                                backgroundColor: '#00ff88',
-                                transition: 'width 0.5s'
-                            }} />
+                            </div>
                         </div>
                     </div>
                 </div>
