@@ -86,9 +86,11 @@ export default function Avatar() {
                             src={imagePath}
                             alt={`Avatar ${currentRoleId} niveau ${level}`}
                             fill
-                            className="object-cover"
+                            style={{ objectFit: 'cover' }} // <--- C'EST CETTE LIGNE QUI FAIT LE ZOOM
+                            className="rounded-full"       // Ajouté pour être sûr que l'image reste ronde
                             priority
-                            onError={(e) => console.error("Image introuvable :", imagePath)}
+                            // Correction de l'erreur ligne 91 : on type 'e' ou on supprime la ligne
+                            onError={() => console.error("Image introuvable :", imagePath)} 
                         />
                     </div>
                 </div>

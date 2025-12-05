@@ -393,7 +393,7 @@ export const scenarios: Scenario[] = [
                 consequence: 'Tes parents s\'endettent. Tu as un bel objet, mais tu es enfermé dans l\'écosystème Apple.',
                 impact: { money: -1500, co2: -200, nird: -20 }, // Bad (Dette)
                 isGoodChoice: false,
-                nextBranch: 'mac' // Indique au jeu de charger les questions "Mac" ensuite
+                
             },
             {
                 id: 'eleve-1-b',
@@ -401,7 +401,7 @@ export const scenarios: Scenario[] = [
                 consequence: 'C\'est gratuit, mais tu perds du temps à chaque clic. C\'est frustrant.',
                 impact: { money: 0, co2: 0, nird: 0 }, // Neutral
                 isGoodChoice: false,
-                nextBranch: 'windows'
+                
             },
             {
                 id: 'eleve-1-c',
@@ -409,8 +409,7 @@ export const scenarios: Scenario[] = [
                 consequence: 'Le PC redémarre en 10 secondes ! C\'est gratuit, rapide et tu apprends l\'informatique.',
                 impact: { money: 0, co2: 200, nird: 40 }, // Good
                 isGoodChoice: true,
-                nextBranch: 'linux'
-            },
+                
         ],
     },
 
@@ -485,7 +484,7 @@ export const scenarios: Scenario[] = [
         roleId: 'eleve',
         title: 'Session Gaming (Linux)',
         situation: 'Tes potes t\'invitent à jouer. "Linux c\'est nul, tu peux pas jouer avec nous !"',
-        requiredBranch: 'linux', // Tag pour le dev
+        
         choices: [
             {
                 id: 'eleve-4-linux-a',
@@ -516,7 +515,7 @@ export const scenarios: Scenario[] = [
         roleId: 'eleve',
         title: 'Session Gaming (Mac)',
         situation: 'Le jeu de tes potes n\'est pas compatible Mac. Ta machine à 1500€ ne sert à rien.',
-        requiredBranch: 'mac',
+       
         choices: [
             {
                 id: 'eleve-4-mac-a',
@@ -547,7 +546,7 @@ export const scenarios: Scenario[] = [
         roleId: 'eleve',
         title: 'Session Gaming (Vieux PC)',
         situation: 'Ton vieux Windows lague trop. Tes potes hurlent : "Tu nous fais perdre !"',
-        requiredBranch: 'windows',
+        
         choices: [
             {
                 id: 'eleve-4-win-a',
@@ -581,7 +580,7 @@ export const scenarios: Scenario[] = [
         roleId: 'eleve',
         title: 'Wifi Public (Linux)',
         situation: 'Au fast-food, le Wifi demande tes données personnelles. Tu es sous Linux.',
-        requiredBranch: 'linux',
+        
         choices: [
             {
                 id: 'eleve-5-lin-a',
@@ -612,7 +611,7 @@ export const scenarios: Scenario[] = [
         roleId: 'eleve',
         title: 'Wifi Public (Danger)',
         situation: 'Wifi du fast-food + Ton OS (Windows/Mac) qui t\'espionne déjà. C\'est le festival des mouchards.',
-        requiredBranch: ['windows', 'mac'], // Valable pour les deux
+       
         choices: [
             {
                 id: 'eleve-5-oth-a',
@@ -745,7 +744,7 @@ export const scenarios: Scenario[] = [
         title: 'Temps d\'écran (Linux)',
         // type: 'terminal', <-- SUPPRIMÉ
         situation: 'Votre ado passe ses nuits sur le PC. Quelle commande pour limiter l\'horaire ?',
-        requiredBranch: 'linux',
+       
         choices: [
             {
                 id: 'parent-3-lin-a',
