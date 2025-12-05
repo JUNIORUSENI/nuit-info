@@ -6,200 +6,168 @@
             {
                 "id": "dir-1",
                 "title": "L'Ultimatum Windows",
-                "situation": "Microsoft annonce la fin du support Windows 10. Vos 200 ordinateurs devront être remplacés ou mis à niveau vers Windows 11, incompatible avec votre parc actuel.",
+                "situation": "Fin du support de Windows 10. Vos 200 PC fonctionnent encore physiquement, mais Microsoft déclare qu'ils sont 'obsolètes' pour Windows 11. Le commercial vous met la pression.",
                 "choices": [
                     {
                         "id": "dir-1-a",
-                        "text": "Racheter 200 nouveaux PC compatibles Windows 11",
-                        "consequence": "Coût : 150 000€. Les anciens PC finissent à la décharge. Émissions CO2 massives.",
+                        "text": "Signer pour 200 PC neufs (-20% ce soir)",
+                        "consequence": "Le budget fond. Une benne à ordures pleine de PC fonctionnels trône dans la cour.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -150000,
-                            "co2": -8000,
-                            "nird": -50
-                        }
+                        "impact": { "money": -30000, "co2": -4000, "nird": -10 }
                     },
                     {
                         "id": "dir-1-b",
-                        "text": "Migrer vers Linux et conserver le parc existant",
-                        "consequence": "Les PC fonctionnent parfaitement sous Linux. Économies massives et impact écologique positif !",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 150000,
-                            "co2": 8000,
-                            "nird": 100
-                        }
+                        "text": "Payer l'extension de support (ESU) pour gagner 1 an",
+                        "consequence": "Vous gagnez du temps, mais vous perdez de l'argent à fond perdu. L'école ne progresse pas.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -5000, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "dir-1-c",
-                        "text": "Attendre et voir ce qui se passe",
-                        "consequence": "Les PC deviennent vulnérables aux failles de sécurité. Risque de cyberattaque.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -20000,
-                            "co2": 0,
-                            "nird": -30
-                        }
+                        "text": "Refuser et installer Linux sur le parc actuel",
+                        "consequence": "Budget sauvé ! Le matériel est prolongé de 5 ans. L'école commence sa transition verte.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 3800, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "dir-2",
-                "title": "Le Budget Logiciels",
-                "situation": "Le renouvellement des licences Microsoft Office coûte 25 000€ par an. Un enseignant propose LibreOffice comme alternative gratuite.",
+                "title": "Surcharge Système",
+                "situation": "La facture d'énergie explose. Les serveurs chauffent anormalement. Quelle commande lancez-vous pour nettoyer les processus ?",
                 "choices": [
                     {
                         "id": "dir-2-a",
-                        "text": "Renouveler les licences Microsoft comme d'habitude",
-                        "consequence": "Budget gaspillé. L'argent aurait pu servir à d'autres projets pédagogiques.",
+                        "text": "sudo rm -rf / (Tout effacer)",
+                        "consequence": "CATASTROPHE ! Vous avez tout effacé. L'école est à l'arrêt complet. Restauration coûteuse nécessaire.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -25000,
-                            "co2": -100,
-                            "nird": -20
-                        }
+                        "impact": { "money": -10000, "co2": 0, "nird": -60 }
                     },
                     {
                         "id": "dir-2-b",
-                        "text": "Adopter LibreOffice pour tout l'établissement",
-                        "consequence": "Économie immédiate ! Les élèves apprennent que des alternatives libres existent.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 25000,
-                            "co2": 100,
-                            "nird": 80
-                        }
+                        "text": "ls -la (Lister les fichiers)",
+                        "consequence": "Vous listez les fichiers... C'est bien rangé, mais les serveurs brûlent toujours.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": -100, "nird": 0 }
                     },
                     {
                         "id": "dir-2-c",
-                        "text": "Faire un essai sur quelques postes seulement",
-                        "consequence": "Approche prudente mais qui retarde les économies potentielles.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -20000,
-                            "co2": 50,
-                            "nird": 10
-                        }
+                        "text": "htop (Voir les processus)",
+                        "consequence": "Bingo ! Vous identifiez un vieux processus de minage crypto et le tuez. La consommation chute.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 2000, "co2": 500, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "dir-3",
-                "title": "La Salle Serveur",
-                "situation": "Votre serveur Windows Server nécessite une licence à 5 000€/an. Un administrateur système propose de migrer vers Linux Server.",
+                "title": "Le Cloud Gratuit ?",
+                "situation": "Une GAFAM propose d'héberger gratuitement tous les dossiers scolaires sur leur 'Cloud Éducation'. Les serveurs sont en Californie.",
                 "choices": [
                     {
                         "id": "dir-3-a",
-                        "text": "Payer la licence Windows Server",
-                        "consequence": "Dépense récurrente sans valeur ajoutée. Budget grevé chaque année.",
+                        "text": "Accepter (C'est gratuit et pratique)",
+                        "consequence": "Les données sont pillées pour entraîner des IA. Des caméras de surveillance virtuelles apparaissent.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -5000,
-                            "co2": -50,
-                            "nird": -15
-                        }
+                        "impact": { "money": 0, "co2": -200, "nird": -10 }
                     },
                     {
                         "id": "dir-3-b",
-                        "text": "Migrer vers Linux Server (Debian/Ubuntu)",
-                        "consequence": "Serveur plus stable, plus sécurisé, et gratuit ! L'administrateur monte en compétences.",
+                        "text": "Accepter mais crypter les données",
+                        "consequence": "C'est sécurisé, mais très lourd à gérer pour les équipes au quotidien.",
                         "isGoodChoice": true,
-                        "impact": {
-                            "money": 5000,
-                            "co2": 200,
-                            "nird": 70
-                        }
+                        "impact": { "money": -1000, "co2": 0, "nird": 10 }
                     },
                     {
                         "id": "dir-3-c",
-                        "text": "Externaliser vers le cloud Microsoft Azure",
-                        "consequence": "Coûts récurrents encore plus élevés. Dépendance totale à Microsoft.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -8000,
-                            "co2": -300,
-                            "nird": -40
-                        }
+                        "text": "Refuser et héberger en local (Nextcloud)",
+                        "consequence": "Souveraineté totale. Vos élèves sont protégés par un bouclier numérique. RGPD respecté.",
+                        "isGoodChoice": true,
+                        "impact": { "money": -2000, "co2": 100, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "dir-4",
-                "title": "Le Partenariat Big Tech",
-                "situation": "Google propose un partenariat 'Google for Education' gratuit. Toutes les données des élèves seraient stockées sur leurs serveurs américains.",
+                "title": "Obsolescence Programmée",
+                "situation": "30 tablettes ont la batterie HS. Le fabricant déclare qu'elles sont 'irréparables' et propose une reprise pour du neuf.",
                 "choices": [
                     {
                         "id": "dir-4-a",
-                        "text": "Accepter le partenariat Google",
-                        "consequence": "Données des élèves exploitées commercialement. Violation potentielle du RGPD.",
+                        "text": "Accepter l'offre de reprise",
+                        "consequence": "Vous alimentez la montagne de déchets électroniques. Solution de facilité.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": -200,
-                            "nird": -80
-                        }
+                        "impact": { "money": -5000, "co2": -1000, "nird": -10 }
                     },
                     {
                         "id": "dir-4-b",
-                        "text": "Déployer des solutions libres auto-hébergées (Nextcloud, Moodle)",
-                        "consequence": "Souveraineté numérique respectée. Les données restent en France.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 2000,
-                            "co2": 300,
-                            "nird": 100
-                        }
+                        "text": "Stocker dans un placard en attendant",
+                        "consequence": "Les élèves n'ont rien lundi. C'est un déchet dormant.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "dir-4-c",
-                        "text": "Demander l'avis des parents avant de décider",
-                        "consequence": "Bonne démarche participative, mais retarde la décision.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": 20
-                        }
+                        "text": "Atelier Réparation (Batteries génériques)",
+                        "consequence": "Matériel sauvé ! Le club info apprend à réparer. Esprit 'Maker' activé.",
+                        "isGoodChoice": true,
+                        "impact": { "money": -500, "co2": 800, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "dir-5",
-                "title": "La Formation des Enseignants",
-                "situation": "Les enseignants demandent une formation aux outils numériques. Microsoft propose une formation gratuite (avec placement de produits).",
+                "title": "La Pression du Wifi",
+                "situation": "Les élèves et parents réclament du Wifi ultra-rapide partout, y compris dans la cour de récré et à la cantine.",
                 "choices": [
                     {
                         "id": "dir-5-a",
-                        "text": "Accepter la formation Microsoft gratuite",
-                        "consequence": "Les enseignants deviennent dépendants des outils Microsoft. Verrouillage technologique.",
+                        "text": "Installer du Wifi 6 partout à fond",
+                        "consequence": "Les élèves deviennent des zombies sur leurs écrans à la récré. Plus de lien social.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -40
-                        }
+                        "impact": { "money": -8000, "co2": -500, "nird": -10 }
                     },
                     {
                         "id": "dir-5-b",
-                        "text": "Organiser une formation aux logiciels libres avec l'APRIL",
-                        "consequence": "Enseignants autonomes et polyvalents. Ils peuvent transmettre ces valeurs aux élèves.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": -500,
-                            "co2": 50,
-                            "nird": 90
-                        }
+                        "text": "Wifi partout mais coupé le midi",
+                        "consequence": "Une solution technique autoritaire qui contourne le problème éducatif.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -8000, "co2": 0, "nird": 10 }
                     },
                     {
                         "id": "dir-5-c",
-                        "text": "Laisser chaque enseignant se former seul",
-                        "consequence": "Inégalités de compétences. Certains restent bloqués.",
+                        "text": "Créer des 'Zones Blanches' conviviales",
+                        "consequence": "La cour reste un lieu de déconnexion. Des arbres poussent, les élèves discutent.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 200, "nird": 30 }
+                    }
+                ]
+            },
+            {
+                "id": "dir-6",
+                "title": "L'Avenir de l'École",
+                "situation": "Le Ministère demande votre plan stratégique pour 2030. Quelle identité pour votre établissement ?",
+                "choices": [
+                    {
+                        "id": "dir-6-a",
+                        "text": "École 'Smart-City' (Tout IA & GAFAM)",
+                        "consequence": "L'école devient une usine futuriste froide. Vous n'êtes plus qu'un gestionnaire d'abonnements.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -20
-                        }
+                        "impact": { "money": -50000, "co2": -2000, "nird": -10 }
+                    },
+                    {
+                        "id": "dir-6-b",
+                        "text": "École Hybride (Au cas par cas)",
+                        "consequence": "L'école tourne, mais c'est toujours la galère budgétaire. Pas de véritable identité.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -10000, "co2": -500, "nird": 10 }
+                    },
+                    {
+                        "id": "dir-6-c",
+                        "text": "Village NIRD (Autonome & Libre)",
+                        "consequence": "Votre établissement est un modèle ! Élèves citoyens, budget excédentaire, label Or.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 20000, "co2": 5000, "nird": 50 }
                     }
                 ]
             }
@@ -211,201 +179,169 @@
         "questions": [
             {
                 "id": "tech-1",
-                "title": "Le PC Zombie",
-                "situation": "Un PC de 2015 sous Windows 10 rame terriblement. L'utilisateur demande un remplacement. Vous diagnostiquez : 4Go de RAM, disque dur mécanique.",
+                "title": "Windows 11 Incompatible",
+                "situation": "Microsoft impose la puce TPM 2.0 pour Windows 11. 80% de votre parc est déclaré 'incompatible' alors que les PC sont puissants.",
                 "choices": [
                     {
                         "id": "tech-1-a",
-                        "text": "Commander un nouveau PC à 600€",
-                        "consequence": "Gaspillage. Le vieux PC aurait pu être réparé pour une fraction du coût.",
+                        "text": "Forcer l'installation (Hack Registre)",
+                        "consequence": "Ça passe, mais c'est instable. Les futures mises à jour feront planter les PC un par un.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -600,
-                            "co2": -150,
-                            "nird": -30
-                        }
+                        "impact": { "money": -2000, "co2": 0, "nird": -10 }
                     },
                     {
                         "id": "tech-1-b",
-                        "text": "Installer Linux + SSD + 8Go RAM (100€ total)",
-                        "consequence": "Le PC revit ! Plus rapide qu'un neuf. L'utilisateur est bluffé.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 500,
-                            "co2": 150,
-                            "nird": 80
-                        }
+                        "text": "Rester sous Windows 10 (Attentisme)",
+                        "consequence": "Vous repoussez le problème. Dans 6 mois, à la fin du support, ce sera la panique totale.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "tech-1-c",
-                        "text": "Réinstaller Windows 10 proprement",
-                        "consequence": "Amélioration temporaire. Dans 6 mois, même problème.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": 5
-                        }
+                        "text": "Passer les PC sous Linux (Xubuntu)",
+                        "consequence": "Problème matériel contourné ! Les PC sont rapides, sécurisés et repartis pour 5 ans.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 50000, "co2": 2000, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "tech-2",
-                "title": "L'Antivirus Gourmand",
-                "situation": "Norton Antivirus consomme 80% des ressources du PC. L'utilisateur se plaint de lenteurs. La licence coûte 50€/an.",
+                "title": "Panne Critique Serveur",
+                "situation": "Matin des examens. Le serveur Windows crash (Écran Bleu). Il redémarre en boucle. Les profs attendent les sujets PDF.",
                 "choices": [
                     {
                         "id": "tech-2-a",
-                        "text": "Renouveler la licence Norton",
-                        "consequence": "L'antivirus continue de ralentir le PC. Argent gaspillé.",
+                        "text": "Tenter une 'Réparation Automatique' Windows",
+                        "consequence": "Ça tourne dans le vide pendant 1 heure. Les examens sont annulés. Vous passez pour un incompétent.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -50,
-                            "co2": -10,
-                            "nird": -20
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": -20 }
                     },
                     {
                         "id": "tech-2-b",
-                        "text": "Passer à Linux (pas besoin d'antivirus)",
-                        "consequence": "Problème résolu à la source ! Linux est naturellement sécurisé.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 50,
-                            "co2": 30,
-                            "nird": 70
-                        }
+                        "text": "Appeler le support Dell (Délai 48h)",
+                        "consequence": "Vous êtes inutile sur le moment. La crise n'est pas gérée.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -500, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "tech-2-c",
-                        "text": "Installer Windows Defender (gratuit)",
-                        "consequence": "Mieux que Norton, mais Windows reste vulnérable aux malwares.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": 50,
-                            "co2": 10,
-                            "nird": 15
-                        }
+                        "text": "Booter sur clé USB Linux & Sauver les fichiers",
+                        "consequence": "Héroïque ! Vous accédez au disque, récupérez les PDF et imprimez. Linux a sauvé la journée.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 100, "nird": 40 }
                     }
                 ]
             },
             {
                 "id": "tech-3",
-                "title": "Le Serveur de Fichiers",
-                "situation": "Le NAS Synology tombe en panne. Devis de réparation : 800€. Alternative : recycler un vieux PC en serveur.",
+                "title": "Automatisation",
+                "situation": "Vous devez installer LibreOffice sur 50 machines Linux. Pas question de le faire à la main. Quelle commande choisissez-vous ?",
                 "choices": [
                     {
                         "id": "tech-3-a",
-                        "text": "Réparer le NAS Synology",
-                        "consequence": "Cher et dépendant d'un constructeur propriétaire.",
+                        "text": "sudo chmod -R 777 / (Tout ouvrir)",
+                        "consequence": "MALHEUR ! Vous avez donné tous les droits à tout le monde. Un script malveillant efface le système 10 min après.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -800,
-                            "co2": -50,
-                            "nird": -15
-                        }
+                        "impact": { "money": -20000, "co2": 0, "nird": -60 }
                     },
                     {
                         "id": "tech-3-b",
-                        "text": "Monter un serveur TrueNAS sur un vieux PC",
-                        "consequence": "Solution puissante, gratuite et éducative. Vous apprenez plein de choses !",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 800,
-                            "co2": 100,
-                            "nird": 85
-                        }
+                        "text": "Boucle SSH manuelle",
+                        "consequence": "Ça marche, mais c'est lent et fragile. Vous devez gérer les erreurs manuellement.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 10 }
                     },
                     {
                         "id": "tech-3-c",
-                        "text": "Passer au stockage cloud (Google Drive)",
-                        "consequence": "Données externalisées. Coûts récurrents et dépendance.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -200,
-                            "co2": -80,
-                            "nird": -30
-                        }
+                        "text": "ansible-playbook deploy.yml",
+                        "consequence": "Propre. Ansible déploie la configuration sur tout le parc en parallèle. Robuste et documenté.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 5000, "co2": 200, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "tech-4",
-                "title": "Le Réseau Mystérieux",
-                "situation": "Internet rame. Quelqu'un ou quelque chose consomme toute la bande passante. Vous devez identifier le coupable.",
+                "title": "Pilote Manquant",
+                "situation": "La grosse photocopieuse fonctionne, mais le pilote Windows 11 n'existe pas. Sous Linux, le pilote Libre ne gère pas l'agrafage auto.",
                 "choices": [
                     {
                         "id": "tech-4-a",
-                        "text": "Appeler le FAI et demander plus de débit",
-                        "consequence": "Plus cher mais le problème n'est pas résolu. Le coupable sévit toujours.",
+                        "text": "Louer une neuve (5000€/an)",
+                        "consequence": "Matériel fonctionnel jeté pour du confort. Obsolescence validée.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -300,
-                            "co2": -20,
-                            "nird": -10
-                        }
+                        "impact": { "money": -5000, "co2": -500, "nird": -10 }
                     },
                     {
                         "id": "tech-4-b",
-                        "text": "Scanner le réseau avec nmap et analyser le trafic",
-                        "consequence": "Trouvé : un Chromecast oublié télécharge des mises à jour en boucle !",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 300,
-                            "co2": 50,
-                            "nird": 60
-                        }
+                        "text": "Monter un serveur d'impression Windows",
+                        "consequence": "Usine à gaz. Vous gaspillez des ressources serveur juste pour une fonctionnalité.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -1000, "co2": -100, "nird": 0 }
                     },
                     {
                         "id": "tech-4-c",
-                        "text": "Redémarrer le routeur et croiser les doigts",
-                        "consequence": "Ça remarche... pour 2 jours. Puis rebelote.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": 5
-                        }
+                        "text": "Utiliser le pilote Libre (Sans agrafage)",
+                        "consequence": "Machine sauvée ! L'administration râle un peu pour l'agrafage manuel, mais le budget est préservé.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 5000, "co2": 300, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "tech-5",
-                "title": "La Mise à Jour Catastrophe",
-                "situation": "Windows Update a tout cassé. L'utilisateur ne peut plus travailler. Microsoft ne propose pas de solution.",
+                "title": "Lag Réseau",
+                "situation": "Le réseau est saturé, tout est lent. Vous devez identifier la cause sur le routeur en ligne de commande.",
                 "choices": [
                     {
                         "id": "tech-5-a",
-                        "text": "Réinstaller Windows depuis zéro (3h de travail)",
-                        "consequence": "Problème résolu mais temps perdu. Et ça recommencera...",
+                        "text": "sudo iptables -F (Vider pare-feu)",
+                        "consequence": "Vous avez vidé le pare-feu ! Le réseau accélère... parce que les virus entrent librement.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -100,
-                            "co2": -10,
-                            "nird": -15
-                        }
+                        "impact": { "money": -5000, "co2": 0, "nird": -20 }
                     },
                     {
                         "id": "tech-5-b",
-                        "text": "Profiter de l'occasion pour migrer vers Linux",
-                        "consequence": "Mises à jour Linux : fiables, rapides, sans surprises. L'utilisateur adopte !",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 100,
-                            "co2": 40,
-                            "nird": 75
-                        }
+                        "text": "Reboot physique du switch",
+                        "consequence": "Ça coupe tout le monde. Le problème revient 10 minutes après le redémarrage.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "tech-5-c",
-                        "text": "Restaurer depuis une sauvegarde",
-                        "consequence": "Retour en arrière. Mais la prochaine mise à jour recassera tout.",
+                        "text": "sudo iftop -i eth0 (Monitoring)",
+                        "consequence": "L'analyseur s'ouvre. Vous bloquez le PC qui téléchargeait en boucle. Chirurgical.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 100, "nird": 30 }
+                    }
+                ]
+            },
+            {
+                "id": "tech-6",
+                "title": "Stratégie 2030",
+                "situation": "Le Rectorat vous demande votre vision technique pour l'avenir de l'infrastructure.",
+                "choices": [
+                    {
+                        "id": "tech-6-a",
+                        "text": "Tout Cloud (AWS/Azure)",
+                        "consequence": "Perte de souveraineté. Vous devenez un simple gestionnaire de factures GAFAM.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": 10
-                        }
+                        "impact": { "money": -20000, "co2": -1000, "nird": -20 }
+                    },
+                    {
+                        "id": "tech-6-b",
+                        "text": "Serveurs Windows Locaux",
+                        "consequence": "C'est lourd et cher en licences, mais vous avez l'habitude. Pas d'innovation.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -10000, "co2": -500, "nird": 0 }
+                    },
+                    {
+                        "id": "tech-6-c",
+                        "text": "Infra Hybride Libre & Reconditionnée",
+                        "consequence": "Modèle résilient ! Auto-hébergement, scripts d'automatisation, matériel durable. Vous êtes l'Architecte.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 15000, "co2": 2000, "nird": 50 }
                     }
                 ]
             }
@@ -417,201 +353,253 @@
         "questions": [
             {
                 "id": "eleve-1",
-                "title": "Le Logiciel de Retouche",
-                "situation": "Tu dois retoucher des photos pour ton exposé d'Arts Plastiques. Tes camarades utilisent Photoshop cracké (illégal) ou paient 24€/mois.",
+                "title": "La Rentrée",
+                "situation": "Ton ordinateur portable a 5 ans et rame énormément. Tes parents n'ont pas le budget pour un neuf. Que fais-tu ?",
                 "choices": [
                     {
                         "id": "eleve-1-a",
-                        "text": "Télécharger Photoshop cracké comme tout le monde",
-                        "consequence": "Illégal et risqué (virus, malwares). Tu pourrais avoir des ennuis.",
+                        "text": "Faire une crise pour un MacBook à crédit",
+                        "consequence": "Tes parents s'endettent. Tu as un bel objet, mais tu es enfermé dans l'écosystème Apple.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -50
-                        }
+                        "impact": { "money": -1500, "co2": -200, "nird": -20 }
                     },
                     {
                         "id": "eleve-1-b",
-                        "text": "Installer GIMP, l'alternative libre et gratuite",
-                        "consequence": "Légal, gratuit, et aussi puissant ! Tu impressionnes ton prof.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 288,
-                            "co2": 20,
-                            "nird": 70
-                        }
+                        "text": "Garder le vieux Windows qui rame",
+                        "consequence": "C'est gratuit, mais tu perds du temps à chaque clic. C'est frustrant.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "eleve-1-c",
-                        "text": "Demander à tes parents de payer l'abonnement Adobe",
-                        "consequence": "Cher pour tes parents. Et tu deviens dépendant d'un abonnement.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -288,
-                            "co2": -10,
-                            "nird": -20
-                        }
+                        "text": "Installer Linux (Xubuntu) dessus",
+                        "consequence": "Le PC redémarre en 10 secondes ! C'est gratuit, rapide et tu apprends l'informatique.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 200, "nird": 40 }
                     }
                 ]
             },
             {
                 "id": "eleve-2",
-                "title": "L'Exposé Perdu",
-                "situation": "Tu as perdu ton exposé d'Histoire ! Tu l'as sauvegardé quelque part sur l'ordi mais tu ne sais plus où.",
+                "title": "Le Hack de Jade",
+                "situation": "Jade est en panique. Son PC Linux est bloqué avant son exposé. Elle te demande de lancer la mise à jour via le terminal.",
                 "choices": [
                     {
                         "id": "eleve-2-a",
-                        "text": "Refaire tout l'exposé depuis le début",
-                        "consequence": "3 heures de travail perdues. Tu es frustré(e).",
+                        "text": "sudo rm -rf / (Tout effacer)",
+                        "consequence": "HORREUR ! Tu as effacé tout son disque dur. Elle te déteste. Exposé perdu.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -10
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": -60 }
                     },
                     {
                         "id": "eleve-2-b",
-                        "text": "Utiliser la commande 'find' pour le retrouver",
-                        "consequence": "Trouvé en 5 secondes ! Tu découvres la puissance du terminal.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 0,
-                            "co2": 5,
-                            "nird": 50
-                        }
+                        "text": "echo 'Update please'",
+                        "consequence": "Rien ne se passe... Un autre élève vient l'aider à ta place. La honte.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "eleve-2-c",
-                        "text": "Demander à un adulte de chercher pour toi",
-                        "consequence": "Il le trouve mais tu n'as rien appris.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": 5
-                        }
+                        "text": "sudo apt update && upgrade",
+                        "consequence": "Matrix Style ! Le PC se met à jour en 30 secondes. L'exposé est sauvé. Tu marques des points.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "eleve-3",
-                "title": "Le Jeu Vidéo Tentant",
-                "situation": "Tu veux jouer à Minecraft mais la licence coûte 25€. Un ami te dit que sur Linux, il existe Minetest, un clone gratuit.",
+                "title": "Travail de Groupe",
+                "situation": "Tes camarades utilisent tous Word (payant) et t'envoient des fichiers .docx qui cassent ta mise en page.",
                 "choices": [
                     {
                         "id": "eleve-3-a",
-                        "text": "Demander 25€ à tes parents pour Minecraft",
-                        "consequence": "Tu joues à Minecraft mais tes parents râlent.",
+                        "text": "Télécharger un crack de Word",
+                        "consequence": "Tu chopes un Ransomware qui crypte tes photos. Mauvaise idée.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -25,
-                            "co2": 0,
-                            "nird": -5
-                        }
+                        "impact": { "money": -200, "co2": 0, "nird": -20 }
                     },
                     {
                         "id": "eleve-3-b",
-                        "text": "Essayer Minetest, le clone libre et gratuit",
-                        "consequence": "C'est pareil et même mieux avec des mods infinis ! Tu économises.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 25,
-                            "co2": 5,
-                            "nird": 60
-                        }
+                        "text": "Utiliser Word Online (Gratuit)",
+                        "consequence": "Ça dépanne, mais Microsoft analyse tout ce que tu écris pour ses IA.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": -10 }
                     },
                     {
                         "id": "eleve-3-c",
-                        "text": "Pirater Minecraft sur un site douteux",
-                        "consequence": "Virus ! Ton PC est infecté. Tes parents sont furieux.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -100,
-                            "co2": -20,
-                            "nird": -70
-                        }
+                        "text": "Les convaincre d'utiliser LibreOffice",
+                        "consequence": "Victoire ! Vous passez au format ouvert .odt. Plus de problème de compatibilité.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
                     }
                 ]
             },
             {
-                "id": "eleve-4",
-                "title": "Le Smartphone Lent",
-                "situation": "Ton smartphone Android de 3 ans rame. Tes parents veulent t'en acheter un neuf. Mais tu as entendu parler de LineageOS...",
+                "id": "eleve-4-linux",
+                "title": "Session Gaming (Linux)",
+                "situation": "Tes potes t'invitent à jouer. 'Linux c'est nul, tu peux pas jouer avec nous !'",
                 "choices": [
                     {
-                        "id": "eleve-4-a",
-                        "text": "Accepter le nouveau smartphone (400€)",
-                        "consequence": "Nouveau téléphone mais ton ancien finit dans un tiroir. Gaspillage.",
+                        "id": "eleve-4-linux-a",
+                        "text": "Réinstaller Windows piraté",
+                        "consequence": "Retour à la case départ. Tu perds ton indépendance pour un jeu.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -400,
-                            "co2": -80,
-                            "nird": -30
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": -20 }
                     },
                     {
-                        "id": "eleve-4-b",
-                        "text": "Installer LineageOS pour redonner vie à ton téléphone",
-                        "consequence": "Téléphone comme neuf ! Plus rapide et sans bloatware. Tes parents sont impressionnés.",
+                        "id": "eleve-4-linux-b",
+                        "text": "Utiliser Proton/Steam Play",
+                        "consequence": "Ça marche ! Tu prouves à tout le monde que Linux fait tourner les jeux AAA.",
                         "isGoodChoice": true,
-                        "impact": {
-                            "money": 400,
-                            "co2": 80,
-                            "nird": 90
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
                     },
                     {
-                        "id": "eleve-4-c",
-                        "text": "Supprimer des applications pour gagner de la place",
-                        "consequence": "Amélioration mineure. Dans 3 mois, même problème.",
+                        "id": "eleve-4-linux-c",
+                        "text": "Ne pas jouer (Triste)",
+                        "consequence": "Tu restes seul ce soir-là. Dommage.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 10,
-                            "nird": 10
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     }
                 ]
             },
             {
-                "id": "eleve-5",
-                "title": "Le Travail de Groupe",
-                "situation": "Pour le projet de groupe, tes camarades veulent utiliser Google Docs. Toi, tu connais Framapad et Cryptpad...",
+                "id": "eleve-4-mac",
+                "title": "Session Gaming (Mac)",
+                "situation": "Le jeu de tes potes n'est pas compatible Mac. Ta machine à 1500€ ne sert à rien.",
                 "choices": [
                     {
-                        "id": "eleve-5-a",
-                        "text": "Utiliser Google Docs comme tout le monde",
-                        "consequence": "Facile mais Google collecte vos données de travail.",
+                        "id": "eleve-4-mac-a",
+                        "text": "Payer un abonnement Cloud Gaming",
+                        "consequence": "Encore payer... Tu es une vache à lait.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": -10,
-                            "nird": -30
-                        }
+                        "impact": { "money": -240, "co2": -50, "nird": -10 }
                     },
                     {
-                        "id": "eleve-5-b",
-                        "text": "Proposer Framapad ou CryptPad au groupe",
-                        "consequence": "Le groupe découvre des alternatives respectueuses. Tu deviens le/la référent(e) tech !",
+                        "id": "eleve-4-mac-b",
+                        "text": "Revendre le Mac pour un PC Linux",
+                        "consequence": "Le Pivot ! Tu as compris que le matériel doit servir l'usage.",
                         "isGoodChoice": true,
-                        "impact": {
-                            "money": 0,
-                            "co2": 15,
-                            "nird": 65
-                        }
+                        "impact": { "money": 500, "co2": 100, "nird": 30 }
                     },
                     {
-                        "id": "eleve-5-c",
-                        "text": "Travailler seul(e) de ton côté sur LibreOffice",
-                        "consequence": "Tu refuses de collaborer. Le travail de groupe en souffre.",
+                        "id": "eleve-4-mac-c",
+                        "text": "Essayer d'émuler (3 FPS)",
+                        "consequence": "Injouable. Ton Mac brûle.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -15
-                        }
+                        "impact": { "money": 0, "co2": -10, "nird": 0 }
+                    }
+                ]
+            },
+            {
+                "id": "eleve-4-windows",
+                "title": "Session Gaming (Vieux PC)",
+                "situation": "Ton vieux Windows lague trop. Tes potes hurlent : 'Tu nous fais perdre !'",
+                "choices": [
+                    {
+                        "id": "eleve-4-win-a",
+                        "text": "Acheter un PC Gamer neuf (1200€)",
+                        "consequence": "Obsolescence validée. Tu jettes un PC réparable.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -1200, "co2": -500, "nird": -20 }
+                    },
+                    {
+                        "id": "eleve-4-win-b",
+                        "text": "Installer Linux en Dual-Boot",
+                        "consequence": "Tu gagnes des FPS car l'OS est léger. Tu sauves la partie et ton PC !",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 100, "nird": 30 }
+                    },
+                    {
+                        "id": "eleve-4-win-c",
+                        "text": "Jouer en 360p et souffrir",
+                        "consequence": "Expérience horrible. Tu ne t'amuses pas.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
+                    }
+                ]
+            },
+            {
+                "id": "eleve-5-linux",
+                "title": "Wifi Public (Linux)",
+                "situation": "Au fast-food, le Wifi demande tes données personnelles. Tu es sous Linux.",
+                "choices": [
+                    {
+                        "id": "eleve-5-lin-a",
+                        "text": "Tout accepter quand même",
+                        "consequence": "Dommage, tu avais un OS sûr mais tu donnes tes infos au portail Wifi.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": -10 }
+                    },
+                    {
+                        "id": "eleve-5-lin-b",
+                        "text": "Partage de connexion 4G",
+                        "consequence": "Autonomie totale. Tu contournes le tracking du fast-food.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
+                    },
+                    {
+                        "id": "eleve-5-lin-c",
+                        "text": "Utiliser un faux email",
+                        "consequence": "Malin, mais fastidieux à chaque fois.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 10 }
+                    }
+                ]
+            },
+            {
+                "id": "eleve-5-other",
+                "title": "Wifi Public (Danger)",
+                "situation": "Wifi du fast-food + Ton OS (Windows/Mac) qui t'espionne déjà. C'est le festival des mouchards.",
+                "choices": [
+                    {
+                        "id": "eleve-5-oth-a",
+                        "text": "Accepter (Naïveté)",
+                        "consequence": "Siphonage total de tes données par le Fast-Food et Microsoft/Apple.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": -20 }
+                    },
+                    {
+                        "id": "eleve-5-oth-b",
+                        "text": "Installer un VPN 'Gratuit'",
+                        "consequence": "PIÈGE ! Le VPN gratuit revend tes données. C'est pire que tout.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": -30 }
+                    },
+                    {
+                        "id": "eleve-5-oth-c",
+                        "text": "Booter sur clé USB Linux (Live)",
+                        "consequence": "Le déclic ! Tu surfes incognito sans toucher à ton disque dur. Résistance activée.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
+                    }
+                ]
+            },
+            {
+                "id": "eleve-6",
+                "title": "Parcoursup",
+                "situation": "Tu dois écrire ta lettre de motivation. Quel citoyen numérique veux-tu devenir ?",
+                "choices": [
+                    {
+                        "id": "eleve-6-a",
+                        "text": "Consommateur Passif",
+                        "consequence": "Tu veux juste que ça marche en payant. Tu finiras dépendant des GAFAM.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -10000, "co2": -500, "nird": -20 }
+                    },
+                    {
+                        "id": "eleve-6-b",
+                        "text": "Développeur Big Tech",
+                        "consequence": "Tu es compétent, mais tu sers le système Goliath. Carrière classique.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 50000, "co2": 0, "nird": 0 }
+                    },
+                    {
+                        "id": "eleve-6-c",
+                        "text": "Héros NIRD (Contributeur)",
+                        "consequence": "Tu veux réparer, partager, libérer. Tu es l'avenir du web libre !",
+                        "isGoodChoice": true,
+                        "impact": { "money": 10000, "co2": 1000, "nird": 50 }
                     }
                 ]
             }
@@ -623,201 +611,197 @@
         "questions": [
             {
                 "id": "parent-1",
-                "title": "L'Ordinateur Familial",
-                "situation": "L'ordinateur familial sous Windows 10 devient trop lent. Votre enfant a besoin d'un PC pour ses devoirs. Le vendeur propose un PC neuf à 700€.",
+                "title": "Le PC de Noël",
+                "situation": "Votre ado entre au lycée et réclame un PC Gamer à 1500€. Votre budget est de 400€.",
                 "choices": [
                     {
                         "id": "parent-1-a",
-                        "text": "Acheter le nouveau PC recommandé par le vendeur",
-                        "consequence": "Dépense importante. L'ancien PC finit à la déchetterie.",
+                        "text": "Céder et prendre un crédit conso",
+                        "consequence": "Vous vous endettez sur 3 ans. L'enfant apprend que le bonheur s'achète à crédit.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -700,
-                            "co2": -150,
-                            "nird": -40
-                        }
+                        "impact": { "money": -1500, "co2": -200, "nird": -20 }
                     },
                     {
                         "id": "parent-1-b",
-                        "text": "Installer Linux sur l'ancien PC",
-                        "consequence": "L'ordinateur redevient rapide ! Votre enfant découvre Linux avec fierté.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 700,
-                            "co2": 150,
-                            "nird": 85
-                        }
+                        "text": "Acheter un PC premier prix au supermarché",
+                        "consequence": "C'est du plastique. Il ramera dans 6 mois. Obsolescence programmée garantie.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -400, "co2": -100, "nird": 0 }
                     },
                     {
                         "id": "parent-1-c",
-                        "text": "Acheter un Chromebook pas cher (300€)",
-                        "consequence": "Moins cher mais dépendance totale à Google. Données de votre enfant collectées.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -300,
-                            "co2": -80,
-                            "nird": -50
-                        }
+                        "text": "ThinkPad reconditionné + Linux",
+                        "consequence": "Indestructible, puissant et pas cher. Vous l'installez ensemble : un vrai moment éducatif.",
+                        "isGoodChoice": true,
+                        "impact": { "money": -350, "co2": 500, "nird": 40 }
                     }
                 ]
             },
             {
                 "id": "parent-2",
-                "title": "Le Contrôle Parental",
-                "situation": "Vous voulez protéger vos enfants sur Internet. Les solutions payantes coûtent 50€/an. Un ami vous parle de solutions libres.",
+                "title": "Virus & Panique",
+                "situation": "Dimanche soir. Écran rouge : Ransomware qui demande 500€ ! Le petit dernier pleure.",
                 "choices": [
                     {
                         "id": "parent-2-a",
-                        "text": "Acheter un logiciel de contrôle parental commercial",
-                        "consequence": "Efficace mais cher. Et vos données sont collectées par l'éditeur.",
+                        "text": "Payer la rançon avec la CB",
+                        "consequence": "Arnaque ! Vous perdez 500€ et l'ordi reste bloqué. Double peine.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -50,
-                            "co2": -5,
-                            "nird": -20
-                        }
+                        "impact": { "money": -500, "co2": 0, "nird": -20 }
                     },
                     {
                         "id": "parent-2-b",
-                        "text": "Configurer Pi-hole sur un Raspberry Pi",
-                        "consequence": "Bloque les pubs et sites dangereux pour toute la maison ! Projet éducatif avec vos enfants.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 50,
-                            "co2": 30,
-                            "nird": 80
-                        }
+                        "text": "Tout éteindre et appeler un dépanneur",
+                        "consequence": "Frais de réparation à prévoir. Les données du disque dur sont perdues.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -100, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "parent-2-c",
-                        "text": "Faire confiance à vos enfants sans protection",
-                        "consequence": "Risqué. Internet peut exposer les enfants à des contenus inappropriés.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -30
-                        }
+                        "text": "Booter sur clé USB Linux (Sauvetage)",
+                        "consequence": "Vous récupérez les photos (le virus est inactif sous Linux) et vous formatez. Héroïque !",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
                     }
                 ]
             },
             {
-                "id": "parent-3",
-                "title": "Les Abonnements Streaming",
-                "situation": "Netflix, Disney+, Amazon Prime... Les abonnements s'accumulent (40€/mois). Votre budget est serré.",
+                "id": "parent-3-linux",
+                "title": "Temps d'écran (Linux)",
+                "situation": "Votre ado passe ses nuits sur le PC. Vous voulez définir des horaires stricts via le terminal.",
                 "choices": [
                     {
-                        "id": "parent-3-a",
-                        "text": "Garder tous les abonnements",
-                        "consequence": "480€/an pour regarder 3 films par mois. Est-ce vraiment rentable ?",
+                        "id": "parent-3-lin-a",
+                        "text": "sudo killall -u enfant (Brutal)",
+                        "consequence": "BRUTAL ! Vous tuez sa session instantanément. Devoir perdu, crise de nerfs majeure.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -480,
-                            "co2": -50,
-                            "nird": -25
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": -60 }
                     },
                     {
-                        "id": "parent-3-b",
-                        "text": "Découvrir les plateformes libres (PeerTube, arte.tv)",
-                        "consequence": "Contenu gratuit et de qualité ! Vous découvrez des documentaires passionnants.",
+                        "id": "parent-3-lin-b",
+                        "text": "echo 'Va dormir' (Message)",
+                        "consequence": "Ça affiche un message... qu'il ignore royalement.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
+                    },
+                    {
+                        "id": "parent-3-lin-c",
+                        "text": "sudo apt install timekpr-next",
+                        "consequence": "Installé ! Une interface graphique permet de définir les horaires. Contrat clair et respecté.",
                         "isGoodChoice": true,
-                        "impact": {
-                            "money": 480,
-                            "co2": 30,
-                            "nird": 70
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
+                    }
+                ]
+            },
+            {
+                "id": "parent-3-windows",
+                "title": "Temps d'écran (Windows)",
+                "situation": "Votre ado joue trop tard. Comment limiter son temps sans transformer la maison en prison ?",
+                "choices": [
+                    {
+                        "id": "parent-3-win-a",
+                        "text": "Acheter un logiciel espion (50€/an)",
+                        "consequence": "Rupture de confiance. Vous surveillez le moindre de ses clics. C'est malsain.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -50, "co2": 0, "nird": -20 }
                     },
                     {
-                        "id": "parent-3-c",
-                        "text": "Pirater les films et séries",
-                        "consequence": "Illégal et risqué. Mauvais exemple pour vos enfants.",
+                        "id": "parent-3-win-b",
+                        "text": "Activer Microsoft Family Safety",
+                        "consequence": "Ça marche, mais Microsoft récolte les données de votre enfant pour son profilage.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -60
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": -10 }
+                    },
+                    {
+                        "id": "parent-3-win-c",
+                        "text": "Couper le Wifi via la Box à 21h30",
+                        "consequence": "Gratuit, radical et sans mouchard. C'est la règle de la maison, pas celle de Microsoft.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "parent-4",
-                "title": "Le Stockage Photos",
-                "situation": "Vos photos de famille (10 000) sont sur Google Photos. Google annonce la fin du stockage gratuit illimité. Que faire maintenant ?",
+                "title": "La TV Espionne",
+                "situation": "Nouvelle TV au salon. Elle demande d'activer le micro pour 'l'assistance vocale' et de lier un compte Google.",
                 "choices": [
                     {
                         "id": "parent-4-a",
-                        "text": "Payer l'abonnement Google One (100€/an)",
-                        "consequence": "Vos souvenirs restent chez Google. Coût récurrent à vie.",
+                        "text": "Tout accepter (Confort)",
+                        "consequence": "Big Brother est dans votre salon. Vos conversations privées sont analysées pour la pub.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -100,
-                            "co2": -20,
-                            "nird": -30
-                        }
+                        "impact": { "money": 0, "co2": 0, "nird": -20 }
                     },
                     {
                         "id": "parent-4-b",
-                        "text": "Installer Nextcloud sur un Raspberry Pi à la maison",
-                        "consequence": "Vos photos vous appartiennent vraiment ! Cloud familial privé et gratuit.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 100,
-                            "co2": 40,
-                            "nird": 85
-                        }
+                        "text": "Ne pas la connecter à Internet",
+                        "consequence": "Vie privée sauve, mais adieu Netflix et Replay. La famille râle.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "parent-4-c",
-                        "text": "Tout mettre sur un disque dur externe",
-                        "consequence": "Risque de perte si le disque tombe en panne. Pas de sauvegarde.",
-                        "isGoodChoice": false,
-                        "impact": {
-                            "money": -50,
-                            "co2": 10,
-                            "nird": 10
-                        }
+                        "text": "Refuser et brancher un Raspberry Pi (Kodi)",
+                        "consequence": "Une TV intelligente, libre, sans pub et qui ne vous écoute pas. Le top.",
+                        "isGoodChoice": true,
+                        "impact": { "money": -50, "co2": 100, "nird": 30 }
                     }
                 ]
             },
             {
                 "id": "parent-5",
-                "title": "L'Assistant Vocal",
-                "situation": "Vos enfants veulent un Amazon Echo ou Google Home pour Noël. C'est à la mode mais vous avez des doutes sur la vie privée.",
+                "title": "Futur Codeur ?",
+                "situation": "Le petit veut 'créer des jeux vidéo'. On vous conseille une appli sur tablette.",
                 "choices": [
                     {
                         "id": "parent-5-a",
-                        "text": "Acheter l'Amazon Echo demandé",
-                        "consequence": "Amazon écoute vos conversations. Vie privée compromise.",
+                        "text": "Installer le jeu Freemium à la mode",
+                        "consequence": "Il n'apprend rien, il veut juste acheter des skins à 5€. C'est un consommateur.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": -100,
-                            "co2": -30,
-                            "nird": -60
-                        }
+                        "impact": { "money": -50, "co2": 0, "nird": -10 }
                     },
                     {
                         "id": "parent-5-b",
-                        "text": "Construire un assistant avec Mycroft ou Home Assistant",
-                        "consequence": "Projet familial passionnant ! L'assistant reste privé et éducatif.",
-                        "isGoodChoice": true,
-                        "impact": {
-                            "money": 50,
-                            "co2": 20,
-                            "nird": 90
-                        }
+                        "text": "Acheter un livre de code théorique",
+                        "consequence": "Trop austère. Il abandonne au bout de 2 jours.",
+                        "isGoodChoice": false,
+                        "impact": { "money": -20, "co2": 0, "nird": 0 }
                     },
                     {
                         "id": "parent-5-c",
-                        "text": "Refuser sans explication",
-                        "consequence": "Vos enfants sont déçus et ne comprennent pas les enjeux.",
+                        "text": "Installer Scratch ou Minetest",
+                        "consequence": "Il crée ses propres règles et comprend la logique. Il passe de spectateur à acteur.",
+                        "isGoodChoice": true,
+                        "impact": { "money": 0, "co2": 0, "nird": 30 }
+                    }
+                ]
+            },
+            {
+                "id": "parent-6",
+                "title": "Valeurs Familiales",
+                "situation": "Vos enfants grandissent. Quel message clé voulez-vous leur transmettre sur le numérique ?",
+                "choices": [
+                    {
+                        "id": "parent-6-a",
+                        "text": "La Facilité (L'argent résout tout)",
+                        "consequence": "Ils deviennent des consommateurs passifs et dépendants des marques.",
                         "isGoodChoice": false,
-                        "impact": {
-                            "money": 0,
-                            "co2": 0,
-                            "nird": -10
-                        }
+                        "impact": { "money": -10000, "co2": -500, "nird": -20 }
+                    },
+                    {
+                        "id": "parent-6-b",
+                        "text": "La Peur (Interdiction)",
+                        "consequence": "Ils sont technophobes et seront désavantagés dans le monde pro.",
+                        "isGoodChoice": false,
+                        "impact": { "money": 0, "co2": 0, "nird": 0 }
+                    },
+                    {
+                        "id": "parent-6-c",
+                        "text": "L'Autonomie (Savoir-faire)",
+                        "consequence": "Ils savent réparer, coder et se protéger. Des citoyens libres !",
+                        "isGoodChoice": true,
+                        "impact": { "money": 5000, "co2": 200, "nird": 50 }
                     }
                 ]
             }
